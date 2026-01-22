@@ -79,6 +79,10 @@ web_modules/
 .env.production.local
 .env.local
 
+# Google API credentials
+credentials.json
+token.json
+
 # parcel-bundler cache (https://parceljs.org/)
 .cache
 .parcel-cache

@@ -30,10 +30,20 @@ async function initGoogleSheets() {
   try {
     const credentialsPath = process.env.GOOGLE_CREDENTIALS_PATH || './credentials.json';
 
-    auth = new google.auth.GoogleAuth({
-      keyFile: credentialsPath,
+    let authConfig = {
       scopes: ['https://www.googleapis.com/auth/spreadsheets']
-    });
+    };
+
+    // 如果环境变量里有 JSON 字符串，优先使用它（适配 Render/Heroku）
+    if (process.env.GOOGLE_CREDENTIALS_JSON) {
+      authConfig.credentials = JSON.parse(process.env.GOOGLE_CREDENTIALS_JSON);
+      console.log('📡 使用环境变量中的 Google 凭证');
+    } else {
+      authConfig.keyFile = credentialsPath;
+      console.log('📁 使用本地文件中的 Google 凭证');
+    }
+
+    auth = new google.auth.GoogleAuth(authConfig);
 
     sheets = google.sheets({ version: 'v4', auth });
     console.log('✅ Google Sheets API 已连接');

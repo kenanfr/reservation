@@ -2,6 +2,16 @@
 
 一个简洁高效的在线预约系统，用于管理周三牧师教练时段的预约。
 
+## 🚀 快速部署
+
+[![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/new/template?template=https://github.com/yourusername/reservation)
+
+### 部署指南（选择适合你的）
+
+- � **[3分钟快速开始](./QUICKSTART.md)** - 最简单的部署方式
+- �📖 **[完整部署指南](./DEPLOYMENT.md)** - 详细的步骤说明和故障排除
+- ✅ **[部署检查清单](./DEPLOYMENT-CHECKLIST.md)** - 逐步检查确保成功部署
+
 ## 功能特点
 
 - 📅 **日期选择**：显示 2026 年 2-4 月的可用周三日期

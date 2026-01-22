@@ -1,0 +1,12 @@
+# Railway 部署时忽略的文件
+.env
+.env.example
+credentials.json
+railway-env.txt
+prepare-railway.sh
+*.md
+!DEPLOYMENT.md
+.DS_Store
+.git
+.gitignore
+node_modules

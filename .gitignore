@@ -83,6 +83,9 @@ web_modules/
 credentials.json
 token.json
 
+# Railway deployment files
+railway-env.txt
+
 # parcel-bundler cache (https://parceljs.org/)
 .cache
 .parcel-cache

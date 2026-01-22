@@ -209,7 +209,7 @@ async function handleBooking(e) {
             showToast('预约成功！期待与您的会面 🙏');
 
             // Reload slots to reflect changes
-            await loadSlots();
+            await loadSlots(currentDate);
         } else {
             showToast(data.message || '预约失败，请重试', true);
         }

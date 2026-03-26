@@ -6,6 +6,7 @@
 - ✅ `railway.json` - Railway 部署配置
 - ✅ `.railwayignore` - 防止敏感文件上传
 - ✅ `prepare-railway.sh` - 自动化环境变量准备脚本
+- ✅ `schedule.json` - 自定义未来日期与 6 个预约时段
 
 ### 2. 文档
 - ✅ `QUICKSTART.md` - 3分钟快速开始指南
@@ -93,9 +94,10 @@ railway logs
 
 ### 应用功能
 - [ ] 访问 Railway URL 正常加载
-- [ ] 可以选择日期
+- [ ] 只显示 `schedule.json` 中的未来日期
 - [ ] 可以查看时段
 - [ ] 可以成功预约
+- [ ] 自己预约后显示“姓名已预约”并可取消
 - [ ] 数据同步到 Google Sheets
 
 ### Google Sheets
@@ -132,6 +134,7 @@ railway logs
 2. **测试应用**
    - 访问生成的 URL
    - 进行一次测试预约
+   - 测试取消自己的预约
    - 检查 Google Sheets
 
 3. **分享给用户**

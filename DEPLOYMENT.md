@@ -11,6 +11,7 @@
 - ✅ 启用了 Google Sheets API
 - ✅ 创建了服务账号并下载了 `credentials.json`
 - ✅ 将服务账号邮箱添加到你的 Google Sheets 编辑权限中
+- ✅ 已按需要修改 `schedule.json` 中的日期和 6 个时段
 
 ### 2. 获取必要信息
 
@@ -135,6 +136,28 @@ railway open
 
 ## 🔧 环境变量配置详解
 
+### schedule.json 排期配置
+
+部署前请确认根目录的 `schedule.json`：
+
+```json
+{
+  "dates": ["2026-04-01", "2026-04-08"],
+  "timeSlots": [
+    "09:00-10:30",
+    "11:00-12:30",
+    "14:00-15:30",
+    "16:00-17:30",
+    "18:00-19:30",
+    "20:00-21:30"
+  ]
+}
+```
+
+- `dates` 只会显示今天及以后、且仍保留在配置中的日期
+- `timeSlots` 是所有日期共用的一套 6 个时段
+- 修改该文件后重新部署即可生效
+
 ### GOOGLE_CREDENTIALS_JSON 格式
 
 这个环境变量需要包含完整的 credentials.json 内容。你可以这样获取：
@@ -255,6 +278,8 @@ Railway 提供：
 - [ ] Google Sheets API 连接成功
 - [ ] 可以通过 Railway 域名访问
 - [ ] 可以正常预约并同步到 Google Sheets
+- [ ] 首页只显示 `schedule.json` 中的未来日期
+- [ ] 自己预约后显示“姓名已预约”，并支持取消预约
 - [ ] 移动端和桌面端显示正常
 
 ---

@@ -37,13 +37,12 @@
       </div>
     </div>
 
-    <!-- 预约弹窗 -->
     <div class="modal-overlay" id="modal-overlay">
       <div class="modal">
         <button class="modal-close" id="modal-close">&times;</button>
         <div class="modal-header">
           <div class="modal-icon">📅</div>
-          <h2>预约教练</h2>
+          <h2 id="modal-title">预约教练</h2>
           <p class="modal-time" id="modal-time"></p>
         </div>
 
@@ -64,10 +63,18 @@
             </span>
           </button>
         </form>
+
+        <div id="cancel-view" class="hidden">
+          <p class="cancel-text" id="cancel-message"></p>
+          <p class="modal-note">取消后，该时段会重新开放给其他人预约。</p>
+          <div class="modal-actions">
+            <button type="button" class="secondary-btn" id="cancel-close-btn">返回</button>
+            <button type="button" class="submit-btn danger" id="confirm-cancel-btn">确认取消预约</button>
+          </div>
+        </div>
       </div>
     </div>
 
-    <!-- 成功提示 -->
     <div class="toast" id="toast">
       <div class="toast-icon">✓</div>
       <div class="toast-message" id="toast-message"></div>
@@ -75,7 +82,7 @@
   </main>
 
   <footer class="footer">
-    <p>如需取消或更改预约，请直接联系牧师</p>
+    <p>如果显示“某某已预约”，点击该时段即可取消自己的预约</p>
   </footer>
 
   <script src="app.js"></script>

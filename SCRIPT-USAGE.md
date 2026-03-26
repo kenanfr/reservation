@@ -15,6 +15,7 @@
 在运行脚本前，确保项目根目录有：
 - ✅ `credentials.json` - Google 服务账号凭证
 - ✅ `.env` - 包含 `GOOGLE_SHEET_ID` 的环境变量文件
+- ✅ `schedule.json` - 已配置要开放的日期和 6 个预约时段
 
 ### 第 2 步：运行脚本
 

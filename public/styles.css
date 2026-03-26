@@ -204,6 +204,11 @@ body {
   padding: 0.5rem;
 }
 
+.date-dropdown:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
 /* ===== Slots Container ===== */
 .slots-container {
   display: grid;
@@ -269,6 +274,17 @@ body {
   opacity: 0.7;
 }
 
+.slot-card.booked.mine {
+  cursor: pointer;
+  opacity: 1;
+  border-color: rgba(245, 158, 11, 0.35);
+}
+
+.slot-card.booked.mine:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 32px rgba(245, 158, 11, 0.25);
+}
+
 .slot-info {
   display: flex;
   align-items: center;
@@ -312,6 +328,12 @@ body {
   background: rgba(239, 68, 68, 0.15);
   color: var(--error);
   border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+.slot-status.mine {
+  background: rgba(245, 158, 11, 0.16);
+  color: var(--warning);
+  border-color: rgba(245, 158, 11, 0.35);
 }
 
 /* ===== Modal ===== */
@@ -397,6 +419,11 @@ body {
   font-weight: 500;
 }
 
+.modal-note {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+}
+
 /* ===== Form ===== */
 .form-group {
   margin-bottom: 1.25rem;
@@ -449,6 +476,40 @@ body {
   min-height: 80px;
 }
 
+.hidden {
+  display: none !important;
+}
+
+.cancel-text {
+  margin-bottom: 0.75rem;
+  font-size: 1rem;
+  color: var(--text-primary);
+}
+
+.modal-actions {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+.secondary-btn {
+  flex: 1;
+  padding: 1rem;
+  background: transparent;
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-sm);
+  color: var(--text-secondary);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.secondary-btn:hover {
+  border-color: var(--primary-light);
+  color: var(--text-primary);
+}
+
 /* ===== Submit Button ===== */
 .submit-btn {
   width: 100%;
@@ -480,9 +541,38 @@ body {
   cursor: not-allowed;
 }
 
+.submit-btn.danger {
+  flex: 1;
+  background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+}
+
+.submit-btn.danger:hover:not(:disabled) {
+  box-shadow: 0 8px 20px rgba(239, 68, 68, 0.35);
+}
+
 .btn-loading {
   display: flex;
   align-items: center;
+}
+
+.status-text,
+.status-error {
+  text-align: center;
+}
+
+.status-error {
+  color: var(--error);
+}
+
+.state-btn {
+  margin-top: 1rem;
+  padding: 0.75rem 1.25rem;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+  color: white;
+  border: none;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  font-weight: 600;
 }
 
 /* ===== Toast ===== */
@@ -579,5 +669,9 @@ body {
 
   .modal {
     padding: 1.5rem;
+  }
+
+  .modal-actions {
+    flex-direction: column;
   }
 }
